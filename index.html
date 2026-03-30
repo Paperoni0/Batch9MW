@@ -1,12 +1,338 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <meta name="description" content="The Official 9th Batch of Maitreyawira Website">
-  <title>Home | 9th Batch</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The Official 9th Batch of Maitreyawira Website">
+    <title>Home | 9th Batch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'DM Sans', sans-serif;
+        overflow: hidden;
+        height: 100vh;
+        width: 100vw;
+      }
+
+      .hero {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background-image: url('/images/school.jpg');
+        background-size: cover;
+        background-position: center;
+        transform: scale(1.04);
+        animation: slowZoom 18s ease-out forwards;
+      }
+
+      @keyframes slowZoom {
+        from { transform: scale(1.04); }
+        to   { transform: scale(1.0); }
+      }
+
+      /* dark gradient overlay — heavier on right to let class list breathe */
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.55) 0%,
+          rgba(0, 0, 0, 0.25) 55%,
+          rgba(0, 0, 0, 0.60) 100%
+        );
+      }
+
+      /* ── LEFT CONTENT ── */
+      .content-left {
+        position: absolute;
+        top: 50%;
+        left: 7%;
+        transform: translateY(-50%);
+        max-width: 520px;
+        animation: fadeUp 1s ease-out both;
+      }
+
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(calc(-50% + 24px)); }
+        to   { opacity: 1; transform: translateY(-50%); }
+      }
+
+      .school-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 300;
+        font-size: clamp(3rem, 6.5vw, 6rem);
+        line-height: 1.05;
+        color: #ffffff;
+        letter-spacing: -0.01em;
+        margin-bottom: 2rem;
+      }
+
+      .school-desc {
+        font-size: 0.92rem;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.72);
+        line-height: 1.75;
+        max-width: 420px;
+      }
+
+      /* ── RIGHT CLASS LIST ── */
+      .class-list {
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0;
+        animation: fadeUp 1s 0.3s ease-out both;
+      }
+
+      .class-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.75rem 0;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.55);
+        font-family: 'DM Sans', sans-serif;
+        font-size: clamp(0.85rem, 1.4vw, 1.05rem);
+        font-weight: 300;
+        letter-spacing: 0.08em;
+        transition: color 0.25s ease;
+        position: relative;
+        width: 100%;
+        justify-content: flex-end;
+      }
+
+      .class-item::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.15);
+        transition: background 0.25s ease;
+      }
+
+      .class-item:last-child::after {
+        display: none;
+      }
+
+      .class-item:hover {
+        color: #ffffff;
+      }
+
+      .class-item:hover::after {
+        background: rgba(255, 255, 255, 0.4);
+      }
+
+      .class-item.active {
+        color: #ffffff;
+        font-weight: 400;
+      }
+
+      .class-item.active .class-indicator {
+        opacity: 1;
+      }
+
+      .class-indicator {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #ffffff;
+        opacity: 0;
+        transition: opacity 0.25s ease;
+        flex-shrink: 0;
+      }
+
+      .class-item:hover .class-indicator {
+        opacity: 0.6;
+      }
+
+      /* ── BATCH BADGE ── */
+      .batch-badge {
+        position: absolute;
+        top: 2.2rem;
+        left: 7%;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 0.72rem;
+        font-weight: 400;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.5);
+        animation: fadeUp 0.8s 0.1s ease-out both;
+      }
+
+      /* ── FLOATING + BUTTON ── */
+      .fab {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+        z-index: 100;
+
+        /* Harwa: wire up onClick here */
+      }
+
+      .fab:hover {
+        background: rgba(255, 255, 255, 0.22);
+        border-color: rgba(255, 255, 255, 0.5);
+        transform: scale(1.08);
+      }
+
+      .fab svg {
+        width: 20px;
+        height: 20px;
+        stroke: rgba(255, 255, 255, 0.85);
+        stroke-width: 1.8;
+      }
+
+      /* ── BOTTOM LEFT — year tag ── */
+      .year-tag {
+        position: absolute;
+        bottom: 2rem;
+        left: 7%;
+        font-size: 0.7rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.35);
+        font-weight: 300;
+      }
+    </style>
+  </head>
+
   <body>
-    <h1 style="text-align:centre; padding:20px; color: #0e8991">If you could see this, then the webpage works</h1>
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <!-- Am so drunk when doing ts, Ima be the owner trice.... dang-->
+      <!-- Batch label top left -->
+      <div class="batch-badge">9th Batch · Maitreyawira Palembang</div>
+
+      <!-- Left: Title + description -->
+      <div class="content-left">
+        <h1 class="school-title">SMA<br />Maitreyawira<br />Palembang</h1>
+        <p class="school-desc">
+          A hub for the 9th Batch — connecting every class, every project,
+          and every story that makes up Maitreyawira Palembang.
+        </p>
+        <a href="https://github.com/Paperoni0/Batch9MW" style="display: inline-block; margin-top: 1.5rem; font-size: 0.9rem; color: rgba(255,255,255,0.6); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); transition: color 0.25s ease, border-color 0.25s ease;">
+          Github Repository</a>
+      </div>
+
+      <!-- Right: Class navigation -->
+      <nav class="class-list">
+        <!-- Grade 10 -->
+        <a href="https://batch9mw.qzz.io/xa" class="class-item">
+          <span>10A</span>
+          <span class="class-indicator"></span>
+        </a>
+        <a href="#" class="class-item">
+          <span>10B</span>
+          <span class="class-indicator"></span>
+        </a>
+        <a href="#" class="class-item">
+          <span>10C</span>
+          <span class="class-indicator"></span>
+        </a>
+        <a href="#" class="class-item">
+          <span>10D</span>
+          <span class="class-indicator"></span>
+        </a>
+        <a href="https://xeversea.sytes.net" class="class-item active">
+          <span>10E</span>
+          <span class="class-indicator"></span>
+        </a>
+
+        <!-- Grade 11 -->
+        <a href="#" class="class-item">
+          <span>11A</span>
+          <span class="class-indicator"></span>
+        </a>
+        <a href="#" class="class-item">
+          <span>11B</span>
+          <span class="class-indicator"></span>
+        </a>
+        <a href="#" class="class-item">
+          <span>11C</span>
+          <span class="class-indicator"></span>
+        </a>
+        <a href="#" class="class-item">
+          <span>11D</span>
+          <span class="class-indicator"></span>
+        </a>
+        <a href="#" class="class-item">
+          <span>11E</span>
+          <span class="class-indicator"></span>
+        </a>
+
+        <!-- Grade 12 -->
+        <a href="#" class="class-item">
+          <span>12A</span>
+          <span class="class-indicator"></span>
+        </a>
+        <a href="#" class="class-item">
+          <span>12B</span>
+          <span class="class-indicator"></span>
+        </a>
+        <a href="#" class="class-item">
+          <span>12C</span>
+          <span class="class-indicator"></span>
+        </a>
+        <a href="#" class="class-item">
+          <span>12D</span>
+          <span class="class-indicator"></span>
+        </a>
+        <a href="#" class="class-item">
+          <span>12E</span>
+          <span class="class-indicator"></span>
+        </a>
+
+        <a href="#" class="class-item" style="margin-top: 0.5rem; color: rgba(255,255,255,0.35); font-size: 0.78rem;">
+          <span>Other(s)</span>
+          <span class="class-indicator"></span>
+        </a>
+      </nav>
+
+      <!-- Year tag bottom left -->
+      <div class="year-tag">2025 — 2026</div>
+    </section>
+
+    <!-- Floating Action Button — Harwa: add onClick handler here -->
+    <button class="fab" aria-label="Quick actions">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="12" y1="5" x2="12" y2="19" />
+        <line x1="5" y1="12" x2="19" y2="12" />
+      </svg>
+    </button>
   </body>
 </html>
