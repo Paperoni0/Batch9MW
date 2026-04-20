@@ -1,0 +1,12 @@
+{
+  "typescript.preferences.includePackageJsonAutoImports": "auto",
+  "typescript.suggest.autoImports": true,
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.format.enable": true,
+  "typescript.validate.enable": true,
+  "typescript.suggest.includeCompletionsForImportStatements": true,
+  "typescript.preferences.includeCompletionsForImportStatements": true,
+  "astro.validate": true
+}
