@@ -1,7 +1,5 @@
 ---
 // batch9mw — Landing Page
-// Drop this file into src/pages/index.astro
-// Replace /images/school.jpg with your actual image in public/images/
 ---
 
 <html lang="en">
@@ -39,7 +37,7 @@
       .hero-bg {
         position: absolute;
         inset: 0;
-        background-image: url('assets/img/main.webp');
+        background-image: url('/images/main.webp');
         background-size: cover;
         background-position: center;
         transform: scale(1.04);
@@ -275,8 +273,7 @@
           <span>10E</span>
           <span class="class-indicator"></span>
         </a>
-
-        <!-- Grade 11 -->
+<!--
         <a href="#" class="class-item">
           <span>11A</span>
           <span class="class-indicator"></span>
@@ -298,7 +295,6 @@
           <span class="class-indicator"></span>
         </a>
 
-        <!-- Grade 12 -->
         <a href="#" class="class-item">
           <span>12A</span>
           <span class="class-indicator"></span>
@@ -324,13 +320,13 @@
           <span>Other(s)</span>
           <span class="class-indicator"></span>
         </a>
+      -->
       </nav>
 
       <!-- Year tag bottom left -->
       <div class="year-tag">2025 — 2026</div>
     </section>
 
-    <!-- Floating Action Button — Harwa: add onClick handler here -->
     <button class="fab" aria-label="Quick actions">
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <line x1="12" y1="5" x2="12" y2="19" />
