@@ -1,0 +1,210 @@
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'DM Sans', sans-serif;
+        overflow: hidden;
+        height: 100vh;
+        width: 100vw;
+      }
+
+      .hero {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background-image: url('/main/asset/image/background/background.webp');
+        background-size: cover;
+        background-position: center;
+        transform: scale(1.04);
+        animation: slowZoom 18s ease-out forwards;
+      }
+
+      @keyframes slowZoom {
+        from { transform: scale(1.04); }
+        to   { transform: scale(1.0); }
+      }
+
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.55) 0%,
+          rgba(0, 0, 0, 0.25) 55%,
+          rgba(0, 0, 0, 0.60) 100%
+        );
+      }
+
+      .content-left {
+        position: absolute;
+        top: 50%;
+        left: 7%;
+        transform: translateY(-50%);
+        max-width: 520px;
+        animation: fadeUp 1s ease-out both;
+      }
+
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(calc(-50% + 24px)); }
+        to   { opacity: 1; transform: translateY(-50%); }
+      }
+
+      .school-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 300;
+        font-size: clamp(3rem, 6.5vw, 6rem);
+        line-height: 1.05;
+        color: #ffffff;
+        letter-spacing: -0.01em;
+        margin-bottom: 2rem;
+      }
+
+      .school-desc {
+        font-size: 0.92rem;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.72);
+        line-height: 1.75;
+        max-width: 420px;
+      }
+
+      .class-list {
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0;
+        animation: fadeUp 1s 0.3s ease-out both;
+      }
+
+      .class-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.75rem 0;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.55);
+        font-family: 'DM Sans', sans-serif;
+        font-size: clamp(0.85rem, 1.4vw, 1.05rem);
+        font-weight: 300;
+        letter-spacing: 0.08em;
+        transition: color 0.25s ease;
+        position: relative;
+        width: 100%;
+        justify-content: flex-end;
+      }
+
+      .class-item::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.15);
+        transition: background 0.25s ease;
+      }
+
+      .class-item:last-child::after {
+        display: none;
+      }
+
+      .class-item:hover {
+        color: #ffffff;
+      }
+
+      .class-item:hover::after {
+        background: rgba(255, 255, 255, 0.4);
+      }
+
+      .class-item.active {
+        color: #ffffff;
+        font-weight: 400;
+      }
+
+      .class-item.active .class-indicator {
+        opacity: 1;
+      }
+
+      .class-indicator {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #ffffff;
+        opacity: 0;
+        transition: opacity 0.25s ease;
+        flex-shrink: 0;
+      }
+
+      .class-item:hover .class-indicator {
+        opacity: 0.6;
+      }
+
+      .batch-badge {
+        position: absolute;
+        top: 2.2rem;
+        left: 7%;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 0.72rem;
+        font-weight: 400;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.5);
+        animation: fadeUp 0.8s 0.1s ease-out both;
+      }
+
+      .fab {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+        z-index: 100;
+
+        /* Harwa: wire up onClick here */
+      }
+
+      .fab:hover {
+        background: rgba(255, 255, 255, 0.22);
+        border-color: rgba(255, 255, 255, 0.5);
+        transform: scale(1.08);
+      }
+
+      .fab svg {
+        width: 20px;
+        height: 20px;
+        stroke: rgba(255, 255, 255, 0.85);
+        stroke-width: 1.8;
+      }
+
+      .year-tag {
+        position: absolute;
+        bottom: 2rem;
+        left: 7%;
+        font-size: 0.7rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.35);
+        font-weight: 300;
+      }
