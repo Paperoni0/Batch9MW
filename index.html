@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="main/css/index.css" />
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <section class="hero">
@@ -26,7 +26,7 @@
           A hub for the 9th Batch — connecting every class, every project,
           and every story that makes up Maitreyawira Palembang.
         </p>
-        <a href="main/" style="display: inline-block; margin-top: 1.5rem; font-size: 0.9rem; color: #DCE9F5; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); transition: color 0.25s ease, border-color 0.25s ease;">
+        <a href="main" style="display: inline-block; margin-top: 1.5rem; font-size: 0.9rem; color: #DCE9F5; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); transition: color 0.25s ease, border-color 0.25s ease;">
           Learn more about us here</a>
       </div>
 
@@ -55,11 +55,17 @@
       <div class="year-tag">2025 — 2026</div>
     </section>
 
-    <button class="fab" aria-label="Quick actions">
+    <button onclick="toggleNav()" class="fab" aria-label="Quick actions">
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <line x1="12" y1="5" x2="12" y2="19" />
         <line x1="5" y1="12" x2="19" y2="12" />
       </svg>
     </button>
+    <script>
+      function toggleNav() {
+        const nav = document.querySelector('.class-list');
+        nav.style.display = nav.style.display === 'none' ? 'block' : 'none';
+      }
+    </script>
   </body>
 </html>
