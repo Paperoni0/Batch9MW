@@ -57,14 +57,16 @@
 
     <button onclick="toggleNav()" class="fab" aria-label="Quick actions">
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <line x1="12" y1="5" x2="12" y2="19" />
+        <line id="navVerticalLine" x1="12" y1="5" x2="12" y2="19" hidden />
         <line x1="5" y1="12" x2="19" y2="12" />
       </svg>
     </button>
     <script>
       function toggleNav() {
         const nav = document.querySelector('.class-list');
+        const verticalLine = document.getElementById("navVerticalLine");
         nav.style.display = nav.style.display === 'none' ? 'block' : 'none';
+        verticalLine.hidden = !verticalLine.hidden;
       }
     </script>
   </body>
