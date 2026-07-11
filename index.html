@@ -13,6 +13,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="/main/css/publicNav.css" />
+    <script src="/main/js/right.js"></script>
+    <script src="/main/js/publicNav.js"></script>
   </head>
   <body>
     <section class="hero">
@@ -62,22 +65,5 @@
         <line x1="5" y1="12" x2="19" y2="12" />
       </svg>
     </button>
-    <script>
-      function toggleNav() {
-        const nav = document.querySelector('.class-list');
-        const verticalLine = document.getElementById('navVerticalLine');
-        nav.style.display = nav.style.display === 'none' ? 'block' : 'none';
-        verticalLine.style.display = nav.style.display === 'none' ? 'block' : 'none';
-      }
-
-      document.addEventListener('DOMContentLoaded', () => {
-        document.addEventListener('contextmenu', event => event.preventDefault());
-        window.oncontextmenu = (event) => {
-          event.preventDefault();
-          event.stopPropagation();
-          return false;
-        };
-      });
-    </script>
   </body>
 </html>

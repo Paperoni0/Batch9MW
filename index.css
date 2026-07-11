@@ -164,38 +164,6 @@
         animation: fadeUp 0.8s 0.1s ease-out both;
       }
 
-      .fab {
-        position: fixed;
-        bottom: 2rem;
-        right: 2rem;
-        width: 52px;
-        height: 52px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.12);
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
-        z-index: 100;
-      }
-
-      .fab:hover {
-        background: rgba(255, 255, 255, 0.22);
-        border-color: rgba(255, 255, 255, 0.5);
-        transform: scale(1.08);
-      }
-
-      .fab svg {
-        width: 20px;
-        height: 20px;
-        stroke: rgba(255, 255, 255, 0.85);
-        stroke-width: 1.8;
-      }
-
       .year-tag {
         position: absolute;
         bottom: 2rem;
@@ -206,7 +174,4 @@
         color: rgba(255, 255, 255, 0.35);
         font-weight: 300;
       }
-
-#navVerticalLine {
-  display: none;
-}
+/* fab moved to publicNav*/
