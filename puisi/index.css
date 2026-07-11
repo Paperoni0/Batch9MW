@@ -1,3 +1,55 @@
+.list-poem {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.poem-class {
+    display: flex;
+    background: #fff;
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+    flex-direction: column;
+    gap: 10px;
+}
+
+.poem-class h2 {
+    color: #64748b;
+    font-size: 18px;
+}
+
+.poem-class h3 {
+    margin: 0;
+    font-size: 15px;
+}
+
+.poem-class .actions {
+    display: flex;
+    margin-top: auto;
+    gap: 8px;
+}
+
+.btn {
+    background: #0ea5a9;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn.secondary {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.btn.tertiary {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
 .hero {
     position: relative;
     width: 100%;
