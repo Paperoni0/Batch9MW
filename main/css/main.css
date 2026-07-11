@@ -76,49 +76,6 @@ blockquote {
   font-style: italic;
 }
 
-header {
-  background: var(--nav-bg);
-  border-bottom: 1px solid var(--border);
-  z-index: 9999;
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
-header nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  list-style: none;
-  padding: 1rem 0;
-  gap: 8px 24px;
-}
-
-header nav a {
-  color: var(--nav-text);
-  text-decoration: none;
-  font-size: 0.875rem;
-  font-weight: 400;
-  letter-spacing: 0.05em;
-  transition: color 0.2s;
-}
-
-header nav a:hover,
-header nav a[aria-current="page"] {
-  color: var(--accent);
-  text-decoration: none;
-  opacity: 1;
-}
-
-@media (max-width: 500px) {
-  header nav a {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-}
-
 /* ── FOOTER ── */
 footer {
   background-color: var(--nav-bg);
