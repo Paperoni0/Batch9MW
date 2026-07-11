@@ -213,6 +213,25 @@
   @media (prefers-reduced-motion: reduce){
     *{ animation: none !important; transition: none !important; }
   }
+
+  #home {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  #home a {
+    background-color: #46B83D;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+
+  #home a:hover {
+    background-color: #389431;
+  }
 </style>
 </head>
 <body>
@@ -224,6 +243,9 @@
   <div class="hills"></div>
 
   <main>
+    <div id="home">
+        <a href="/puisi">Kembali ke Beranda</a>
+    </div>
     <header class="hero">
       <div class="eyebrow">Sajak Senja</div>
       <h1>Langit yang<br>Pulang</h1>
@@ -266,8 +288,11 @@
     </section>
 
     <footer>
+      <div id="home">
+        <a href="/puisi">Kembali ke Beranda</a>
+      </div>
       <div class="title">— selesai, di bawah langit malam —</div>
-      <div class="credit">puisi orisinal · tema langit</div>
+      <div class="credit">puisi orisinal · tema langit. Supported by DevenSMP Studios.</div>
     </footer>
   </main>
 
