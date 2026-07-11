@@ -13,11 +13,61 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="/main/css/main.css" />
+    <link rel="stylesheet" href="/main/css/publicNav.css" />
+    <script src="/main/js/publicNav.js" defer></script>
+    <script src="/main/js/right.js" defer></script>
+  </head>
   <body>
+    <header class="navbar">
+  <a href="/" class="navbar__brand">9th Batch</a>
+
+  <nav class="navbar__links">
+    <a href="/main/index.html" class="active">Home</a>
+    <a href="#">About</a>
+    <a href="#">Projects</a>
+    <a href="#">Gallery</a>
+  </nav>
+
+  <div class="navbar__right">
+    <form class="navbar__search" role="search">
+      <svg aria-hidden="true">...</svg>
+      <input type="search" aria-label="Search..." placeholder="Search..." />
+    </form>
+
+     <button class="fab" aria-label="Quick actions">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line id="navVerticalLine" x1="12" y1="5" x2="12" y2="19" />
+        <line x1="5" y1="12" x2="19" y2="12" />
+      </svg>
+    </button>
+  </div>
+</header>
     <main>
     <h1 style="text-align: center; color: red; ">404</h1>
     <a style="text-align: center"; href="/index.html">Go to Home</a>
     </main>
+<footer>
+  <h2>Contact & Official Channels</h2>
+  <p>Reach out to us or follow official updates from Maitreyawira Palembang.</p>
+
+  <address>
+    <dl>
+      <dt>Email</dt>
+      <dd>Mail us at <a href="mailto:infosma@maitreyawira-palembang.sch.id">infosma@maitreyawira-palembang.sch.id</a>
+      </dd>
+      <dt>School Instagram</dt>
+      <dd>Official school account: <a href="https://www.instagram.com/maitreyawiraschoolpalembang?igsh=ZzkwMjVvbjQ0MHZn">@maitreyawiraschoolpalembang</a>
+      </dd>
+      <dt>High School Instagram</dt>
+      <dd>Official SMA account: <a href="https://www.instagram.com/smamaitreyawiraplg?igsh=NG92ZXVkdWhzbjNv">@smamaitreyawiraplg</a>
+      </dd>
+      <dt>High School OSIS Instagram</dt>
+      <dd>Official OSIS account: <a href="https://www.instagram.com/osis.smaitreyawiraplg?igsh=MWRtaW1nYzU3b21ncg==">@osis.smaitreyawiraplg</a>
+      </dd>
+    </dl>
+  </address>
+</footer>
   </body>
   <script>
     alert("404 Not Found, Please check the URL and try again :)");
