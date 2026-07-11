@@ -91,6 +91,7 @@
 }
 
 .poem-class h2 {
+    margin: 0;
     color: #64748b;
     font-size: 22px;
 }
