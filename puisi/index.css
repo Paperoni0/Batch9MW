@@ -1,3 +1,11 @@
+.head {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 28px;
+    font-size: 28px;
+    color: #0f172a;
+}
+
 .list-poem {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
