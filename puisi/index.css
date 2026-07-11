@@ -3,7 +3,7 @@
     margin: 0;
     margin-bottom: 28px;
     font-size: 28px;
-    color: #0f172a;
+    color: #4970cc;
     animation: fadeIn 0.8s ease;
 }
 
@@ -210,6 +210,10 @@
 
 .class-item:hover .class-indicator {
     opacity: 0.6;
+}
+
+footer {
+    background: #000;
 }
 
 #navVerticalLine {
