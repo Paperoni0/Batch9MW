@@ -93,7 +93,8 @@
 .poem-class h2 {
     margin: 0;
     color: #64748b;
-    font-size: 22px;
+    font-size: 30px;
+    text-align: center;
 }
 
 .poem-class h3 {
