@@ -217,7 +217,7 @@
     width: 52px;
     height: 52px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(5, 36, 236, 0.12);
     border: 1px solid rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -238,7 +238,7 @@
 .fab svg {
     width: 20px;
     height: 20px;
-    stroke: rgba(5, 36, 236, 0.85);
+    stroke: rgba(255, 255, 255, 0.85);
     stroke-width: 1.8;
 }
 
