@@ -125,7 +125,6 @@
 }
 
 .hero {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -137,6 +136,7 @@
 }
 
 .class-list {
+    display: none;
     position: absolute;
     top: 50%;
     right: 5%;
