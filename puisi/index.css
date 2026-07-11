@@ -92,12 +92,12 @@
 
 .poem-class h2 {
     color: #64748b;
-    font-size: 18px;
+    font-size:  22px;
 }
 
 .poem-class h3 {
     margin: 0;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .poem-class .actions {
@@ -227,7 +227,7 @@
 }
 
 .fab:hover {
-    background: rgba(255, 255, 255, 0.22);
+    background: rgba(5, 36, 212, 0.22);
     border-color: rgba(255, 255, 255, 0.5);
     transform: scale(1.08);
 }
@@ -235,7 +235,7 @@
 .fab svg {
     width: 20px;
     height: 20px;
-    stroke: rgba(255, 255, 255, 0.85);
+    stroke: rgba(5, 36, 236, 0.85);
     stroke-width: 1.8;
 }
 
