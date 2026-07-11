@@ -695,6 +695,15 @@ if(hashMatch){
   if(idx >= 0 && idx < POEMS.length) openPoem(idx);
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('contextmenu', event => event.preventDefault());
+  window.oncontextmenu = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    return false;
+  };
+});
+
 </script>
 
 </body>
