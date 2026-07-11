@@ -45,7 +45,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, #39FF14, #FFFF00);
+    background: linear-gradient(#46B83D, #111E0B);
     overflow: hidden;
     align-items: center;
     justify-content: center;
