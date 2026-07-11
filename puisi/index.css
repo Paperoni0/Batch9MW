@@ -125,6 +125,7 @@
 }
 
 .hero {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -209,4 +210,8 @@
 
 .class-item:hover .class-indicator {
     opacity: 0.6;
+}
+
+#navVerticalLine {
+  display: block !important;
 }
