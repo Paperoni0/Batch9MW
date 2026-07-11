@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
@@ -9,9 +10,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="/main/css/publicNav.css">
   <script src="index.js" defer></script>
 </head>
 <body>
+  <header class="navbar">
+  <a href="/" class="navbar__brand">9th Batch</a>
+
+  <nav class="navbar__links">
+    <a href="/main/index.html" class="active">Home</a>
+    <a href="#">About</a>
+    <a href="#">Projects</a>
+    <a href="#">Gallery</a>
+  </nav>
+
+  <div class="navbar__right">
+    <form class="navbar__search" role="search">
+      <svg aria-hidden="true">...</svg>
+      <input type="search" aria-label="Search..." placeholder="Search..." />
+    </form>
+
+     <button onclick="toggleNav()" class="fab" aria-label="Quick actions">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line id="navVerticalLine" x1="12" y1="5" x2="12" y2="19" />
+        <line x1="5" y1="12" x2="19" y2="12" />
+      </svg>
+    </button>
+  </div>
+  </header>
   <main>
     <section class="head">
       <h1>Kumpulan Puisi Bahasa Indonesia Kelas 10 Angkatan Ke-9</h1>
