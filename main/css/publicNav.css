@@ -145,34 +145,35 @@ body {
   .navbar {
     flex-wrap: wrap;
     height: auto;
-    padding: 8px 16px;      /* slightly tighter padding */
+    padding: 8px 16px;
     gap: 8px;
   }
 
-  /* Row 1: logo + links on one line if possible */
+  /* Row 1: logo + links */
   .navbar__brand {
-    flex: 0 0 auto;         /* logo keeps its size */
+    order: 1;
+    flex: 0 0 auto;        /* logo keeps its size */
     margin-bottom: 0;
   }
 
   .navbar__logo {
-    width: 32px;            /* a bit smaller on mobile */
+    width: 32px;
     height: 32px;
   }
 
   .navbar__links {
+    order: 1;
     flex: 1 1 auto;
     gap: 16px;
     justify-content: flex-end;
-    flex-wrap: wrap;        /* allow wrapping if needed */
-    order: 1;
+    flex-wrap: wrap;
   }
 
-  /* Row 2: search + (future) map button below */
+  /* Row 2: search */
   .navbar__right {
+    order: 2;
     width: 100%;
     justify-content: center;
-    order: 2;
   }
 
   .navbar__search {
