@@ -271,6 +271,25 @@
   @media (prefers-reduced-motion: reduce){
     *{ animation:none !important; transition:none !important; }
   }
+
+  #home {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  #home a {
+    background-color: #46B83D;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+
+  #home a:hover {
+    background-color: #389431;
+  }
 </style>
 </head>
 <body>
@@ -302,6 +321,9 @@
         <div class="stat" id="statAngkatan"><b>1</b> ANGKATAN</div>
       </div>
       <div class="scroll-hint" id="heroScrollHint"></div>
+      <div id="home">
+        <a href="/puisi">Kembali ke Beranda</a>
+      </div>
     </header>
 
     <section class="manifes" id="manifes">
@@ -324,6 +346,9 @@
     <footer>
       <div class="title" id="footerTitle"></div>
       <div class="credit" id="footerCredit"></div>
+      <div id="home">
+        <a href="/puisi">Kembali ke Beranda</a>
+      </div>
       <a class="top-link" href="#top">↑ kembali ke awal</a>
     </footer>
   </main>
