@@ -51,8 +51,8 @@ body {
     transition: opacity 0.2s, background 0.2s; }
 
 .btn.primary { 
-    background: var(--accent); 
-    color: var(--nav-bg); 
+    background: var(--nav-bg); 
+    color: var(--accent); 
 }
 .btn.secondary { 
     background: var(--card-bg); 
