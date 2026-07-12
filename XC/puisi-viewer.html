@@ -78,7 +78,8 @@
     background: var(--sun-color);
     box-shadow: 0 0 60px 20px var(--sun-glow), 0 0 130px 60px var(--sun-glow);
   }
-.moon-wrap{
+
+  .moon-wrap{
     position: fixed; left:0; right:0; top: var(--sun-top); z-index:-1;
     display:flex; justify-content:center; opacity: var(--moon-opacity);
     pointer-events:none;
@@ -251,16 +252,22 @@
 
   .poem-card{
     margin: 3rem auto 0; max-width: 36ch;
-    background: rgba(20,20,35,0.16);
-    border: 1px solid var(--hairline-light);
+    background-color: #fbfaf6;
+    background-image:
+      radial-gradient(55% 45% at 12% 18%, rgba(255,255,255,0.9), transparent 70%),
+      radial-gradient(50% 40% at 85% 10%, rgba(255,255,255,0.85), transparent 65%),
+      radial-gradient(65% 45% at 30% 95%, rgba(0,0,0,0.035), transparent 70%),
+      radial-gradient(55% 40% at 90% 75%, rgba(0,0,0,0.03), transparent 65%),
+      radial-gradient(40% 35% at 60% 40%, rgba(0,0,0,0.025), transparent 70%);
+    border: 1px solid rgba(30,36,48,0.12);
     border-radius: 6px;
     padding: 2.6rem 1.8rem;
-    backdrop-filter: blur(4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   }
   .stanza-block{
     font-family:'Cormorant Garamond', serif; font-style:italic;
     font-size: clamp(1.12rem, 3.2vw, 1.4rem); line-height:1.85;
-    color: var(--ink-cream); opacity:0.22; transform: translateY(18px);
+    color: #1a1a2e; opacity:0.22; transform: translateY(18px);
     transition: opacity .8s ease, transform .8s ease; margin: 0 0 1.9rem;
   }
   .stanza-block:last-child{ margin-bottom:0; }
@@ -467,7 +474,7 @@
           <span class="toc-title">${titleHtml}</span>
           <span class="toc-author">${authorHtml}</span>
         </span>
-      </a>`;
+</a>`;
   }
 
   function renderPoemSection(poem, idx, total){
@@ -638,3 +645,4 @@
 
 </body>
 </html>
+     
