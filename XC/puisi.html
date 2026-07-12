@@ -119,7 +119,7 @@
     position:relative; background: var(--cream); color: var(--ink-dark);
     padding: 5rem 1.5rem 4rem;
   }
-  .manifes-inner{ max-width: 560px; margin:0 auto; }
+.manifes-inner{ max-width: 560px; margin:0 auto; }
   .seam{ display:flex; align-items:center; justify-content:center; gap:0.9rem; margin-bottom:2.4rem; }
   .seam-line{ flex:1; max-width:110px; height:1px; background:linear-gradient(to right, transparent, var(--gold), transparent); }
   .manifes h2{
@@ -170,9 +170,7 @@
     display:none; text-align:center; padding:2rem 0; color: var(--ink-dark-soft);
     font-style:italic; font-family:'Cormorant Garamond', serif;
   }
-
-  /* ---------- poem sections ---------- */
-  .poem{
+.poem{
     max-width: 560px; margin: 0 auto; padding: 5.5rem 1.5rem 4rem;
     text-align:center; color: var(--ink-cream);
   }
@@ -330,21 +328,20 @@
      baris baru).
      ====================================================================== */
   const config = {
-    eyebrow: "Antologi Puisi · Kelas XC · Tahun Ajaran 2025/2026",
-    title: "Judul<br>Kaleidoskop Kehidupan",
-    description: "Kumpulan Puisi Kehidupan Karya Siswa Siswa XC",
-    angkatanNumber: "9",
+    eyebrow: "Antologi Puisi · Kelas ___ · Tahun Ajaran ___/___",
+    title: "Judul<br>Antologi Kalian",
+    description: "Tulis deskripsi singkat tentang antologi ini di sini.",
+    angkatanNumber: "1",
     angkatanLabel: "ANGKATAN",
-    heroScrollHint: "geser untuk melihat daftar puisi ↓",
-    manifesTitle: "Kaleidoskop Kehidupan",
+    heroScrollHint: "gulir untuk melihat daftar puisi ↓",
+    manifesTitle: "Jejak Langit",
     manifesDesc: "Setiap puisi adalah secercah cahaya. Klik judul untuk mulai membaca.",
     backLabel: "← Kembali ke Langit",
-    poemScrollHint: "geser untuk membaca ↓",
+    poemScrollHint: "gulir untuk membaca ↓",
     footerTitle: "— selesai —",
-    footerCredit: "Antologi Puisi · Kelas XC"
+    footerCredit: "Antologi Puisi · Kelas ___"
   };
-
-  /* ======================================================================
+/* ======================================================================
      2) ISI PUISI
      Field tiap puisi:
      - title        : judul puisi
@@ -366,11 +363,11 @@
      ====================================================================== */
   const poems = [
     { // Puisi 01
-      title: "halo",       // judul
-      author: "halo",      // nama penulis
+      title: "",       // judul
+      author: "",      // nama penulis
       image: "",       // link/nama file foto (opsional)
-      imageCredit: "sumber : pinterest", // sumber foto (opsional)
-      text: `hehehha`         // isi puisi, pisahkan bait dengan baris kosong
+      imageCredit: "", // sumber foto (opsional)
+      text: ``         // isi puisi, pisahkan bait dengan baris kosong
     },
     { title:"", author:"", image:"", imageCredit:"", text:`` }, // Puisi 02
     { title:"", author:"", image:"", imageCredit:"", text:`` }, // Puisi 03
@@ -466,4 +463,108 @@
         <div class="photo-frame"><div class="photo-inner">${photoHtml}</div></div>
         ${poem.imageCredit ? `<div class="photo-credit">${escapeHtml(poem.imageCredit)}</div>` : ''}
         <div class="eyebrow">Entri No. ${num}</div>
-        <h2 class="poem-title">${displayOrPlaceholder(poem.title, `Judul Puisi 
+        <h2 class="poem-title">${displayOrPlaceholder(poem.title, `Judul Puisi ${num}`)}</h2>
+        <div class="poem-author">${displayOrPlaceholder(poem.author, 'Nama Penulis')}</div>
+        <div class="scroll-hint">${escapeHtml(config.poemScrollHint)}</div>
+        <div class="poem-card">${renderPoemText(poem.text)}</div>
+        <div class="poem-nav">
+          ${prevNum ? `<a href="#puisi-${prevNum}">← Sebelumnya</a>` : `<span></span>`}
+          <a href="#manifes">↑ Daftar Isi</a>
+          ${nextNum ? `<a href="#puisi-${nextNum}">Berikutnya →</a>` : `<span></span>`}
+        </div>
+      </section>`;
+  }
+
+  // isi teks umum
+  document.getElementById('heroEyebrow').textContent = config.eyebrow;
+  document.getElementById('heroTitle').innerHTML = config.title;
+  document.getElementById('heroDesc').textContent = config.description;
+  document.getElementById('statAngkatan').innerHTML = `<b>${config.angkatanNumber}</b> ${config.angkatanLabel}`;
+  document.getElementById('heroScrollHint').textContent = config.heroScrollHint;
+  document.getElementById('manifesTitle').textContent = config.manifesTitle;
+  document.getElementById('manifesDesc').textContent = config.manifesDesc;
+  document.getElementById('footerTitle').textContent = config.footerTitle;
+  document.getElementById('footerCredit').textContent = config.footerCredit;
+  document.getElementById('statCount').textContent = poems.length;
+
+  // render manifes + puisi
+  document.getElementById('tocList').innerHTML = poems.map(renderTocRow).join('');
+  document.getElementById('poemsContainer').innerHTML =
+    poems.map((p, i) => renderPoemSection(p, i, poems.length)).join('');
+
+  // pencarian
+  const searchInput = document.getElementById('searchInput');
+  const emptyMsg = document.getElementById('emptyMsg');
+  searchInput.addEventListener('input', () => {
+    const q = searchInput.value.trim().toLowerCase();
+    let visible = 0;
+    document.querySelectorAll('.toc-row').forEach(row => {
+      const match = row.dataset.title.includes(q) || row.dataset.author.includes(q);
+      row.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    emptyMsg.style.display = visible === 0 ? 'block' : 'none';
+  });
+// reveal bait saat discroll
+  const stanzaObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.2 });
+  document.querySelectorAll('.stanza-block').forEach(el => stanzaObserver.observe(el));
+
+  // ===== langit yang berubah dari siang menuju gelap seiring gulir =====
+  const root = document.documentElement;
+  const stops = [
+    { p: 0.00, top:[86,190,245],  bottom:[255,224,178], sun:[255,214,102], glow:0.55 },
+    { p: 0.20, top:[99,168,205],  bottom:[255,196,140], sun:[255,178,88],  glow:0.50 },
+    { p: 0.42, top:[76,104,150],  bottom:[255,142,116], sun:[255,111,92],  glow:0.42 },
+    { p: 0.62, top:[48,48,92],    bottom:[196,86,112],  sun:[224,74,74],   glow:0.28 },
+    { p: 0.82, top:[22,22,54],    bottom:[74,32,82],    sun:[178,40,54],   glow:0.12 },
+    { p: 1.00, top:[8,11,26],     bottom:[6,9,20],       sun:[178,40,54],   glow:0.00 }
+  ];
+  function lerp(a,b,t){ return a + (b-a)*t; }
+  function lerpColor(c1,c2,t){
+    return [Math.round(lerp(c1[0],c2[0],t)), Math.round(lerp(c1[1],c2[1],t)), Math.round(lerp(c1[2],c2[2],t))];
+  }
+  function rgb(c){ return `rgb(${c[0]}, ${c[1]}, ${c[2]})`; }
+  function getStops(progress){
+    for(let i=0;i<stops.length-1;i++){
+      if(progress >= stops[i].p && progress <= stops[i+1].p){
+        const local = (progress - stops[i].p) / (stops[i+1].p - stops[i].p);
+        return { a: stops[i], b: stops[i+1], t: local };
+      }
+    }
+    return { a: stops[stops.length-1], b: stops[stops.length-1], t: 0 };
+  }
+  function updateSky(){
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = maxScroll > 0 ? Math.min(Math.max(window.scrollY / maxScroll, 0), 1) : 0;
+    const { a, b, t } = getStops(progress);
+    const top = lerpColor(a.top, b.top, t);
+    const bottom = lerpColor(a.bottom, b.bottom, t);
+    const sun = lerpColor(a.sun, b.sun, t);
+    const glow = lerp(a.glow, b.glow, t);
+
+    root.style.setProperty('--sky-top', rgb(top));
+    root.style.setProperty('--sky-bottom', rgb(bottom));
+    root.style.setProperty('--sun-color', rgb(sun));
+    root.style.setProperty('--sun-glow', `rgba(${sun[0]}, ${sun[1]}, ${sun[2]}, ${glow})`);
+
+    const sunTop = lerp(6, 96, progress);
+    root.style.setProperty('--sun-top', sunTop + '%');
+
+    const sunOpacity = progress < 0.86 ? 1 : lerp(1, 0, (progress-0.86)/0.14);
+    root.style.setProperty('--sun-opacity', sunOpacity);
+
+    const starOpacity = progress < 0.4 ? 0 : lerp(0, 1, (progress-0.4)/0.5);
+    root.style.setProperty('--star-opacity', Math.min(starOpacity, 1));
+  }
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking){ requestAnimationFrame(() => { updateSky(); ticking = false; }); ticking = true; }
+  });
+  window.addEventListener('resize', updateSky);
+  updateSky();
+</script>
+
+</body>
+</html>
