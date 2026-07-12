@@ -39,11 +39,11 @@
 
 @keyframes moveUp {
     from {
-        transform: translateY(100vh);
+        transform: translateY(0);
         opacity: 0;
     }
     to {
-        transform: translateY(-10vh);
+        transform: translateY(calc(-100dvh - 10px));
         opacity: 0.5;
     }
 }
@@ -62,7 +62,7 @@
     z-index: -1;
 }
 
-#particles: {
+#particles {
     position: fixed;
     inset: 0;
     overflow: hidden;
