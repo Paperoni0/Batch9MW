@@ -76,39 +76,88 @@ blockquote {
   font-style: italic;
 }
 
-/* ── FOOTER ── */
+/* ── FOOTER ───────────────────────────────────────────── */
 footer {
   background-color: var(--nav-bg);
   border-top: 1px solid var(--border);
   color: var(--text-muted);
-  text-align: center;
   padding: 2rem 1rem;
-  font-size: 0.875rem;
   margin-top: auto;
+  font-size: 0.875rem;
+}
+
+/* Main grid */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.footer-grid section {
+  min-width: 0;
 }
 
 footer h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   color: var(--nav-text);
   font-size: 1.3rem;
   margin-bottom: 0.75rem;
 }
 
 footer p {
+  margin: 0 0 0.75rem;
   color: var(--text-muted);
+  line-height: 1.6;
 }
 
 footer a {
   color: var(--accent);
-  transition: color 0.3s;
   text-decoration: none;
+  transition: color 0.3s;
 }
 
-footer a:hover { color: var(--accent-light); text-decoration: underline; }
+footer a:hover {
+  color: var(--accent-light);
+  text-decoration: underline;
+}
 
-footer dl { margin: 0; }
-footer dt { font-weight: 500; color: var(--nav-text); }
-footer dd { margin: 0 0 6px 0; }
+footer dl {
+  margin: 0;
+}
+
+footer dt {
+  margin-top: 0.8rem;
+  font-weight: 600;
+  color: var(--nav-text);
+}
+
+footer dd {
+  margin: 0.25rem 0 0;
+}
+
+/* Bottom copyright bar */
+.footer-bottom {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .footer-grid {
+    gap: 1.5rem;
+  }
+
+  .footer-grid section {
+    text-align: center;
+  }
+}
 
 abbr[title] {
   text-decoration: underline dotted;

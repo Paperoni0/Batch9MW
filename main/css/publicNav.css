@@ -31,16 +31,21 @@ body {
   background: var(--nav-bg);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
 }
- 
+
+/* Brand: link + logo image */
 .navbar__brand {
-  color: var(--nav-text);
-  font-weight: 600;
-  font-size: 18px;
-  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
-  white-space: nowrap;
 }
- 
+
+.navbar__logo {
+  display: block;
+  width: 40px;   /* visible size; source can be 128x128 */
+  height: 40px;
+  object-fit: contain;
+}
+
 /* ── NAV LINKS (4 <a>) ── */
 .navbar__links {
   display: flex;
@@ -50,7 +55,7 @@ body {
   margin: 0;
   padding: 0;
 }
- 
+
 .navbar__links a {
   color: var(--nav-text);
   text-decoration: none;
@@ -61,7 +66,7 @@ body {
   opacity: 0.85;
   transition: opacity 0.15s ease, color 0.15s ease;
 }
- 
+
 .navbar__links a::after {
   content: "";
   position: absolute;
@@ -72,24 +77,31 @@ body {
   background: var(--accent);
   transition: width 0.2s ease;
 }
- 
+
 .navbar__links a:hover,
 .navbar__links a:focus-visible {
   opacity: 1;
   color: var(--accent);
 }
- 
+
 .navbar__links a:hover::after,
 .navbar__links a:focus-visible::after,
 .navbar__links a.active::after {
   width: 100%;
 }
- 
+
 .navbar__links a.active {
   opacity: 1;
   color: var(--accent);
 }
- 
+
+/* ── RIGHT SIDE (search + future map button) ── */
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 /* ── SEARCH BAR ── */
 .navbar__search {
   display: flex;
@@ -101,12 +113,12 @@ body {
   min-width: 200px;
   transition: border-color 0.15s ease, background 0.15s ease;
 }
- 
+
 .navbar__search:focus-within {
   border-color: var(--accent);
   background: #234636;
 }
- 
+
 .navbar__search input {
   flex: 1;
   border: none;
@@ -116,11 +128,11 @@ body {
   font-size: 14px;
   font-family: inherit;
 }
- 
+
 .navbar__search input::placeholder {
   color: rgba(234, 243, 238, 0.5);
 }
- 
+
 .navbar__search svg {
   width: 16px;
   height: 16px;
@@ -128,8 +140,8 @@ body {
   margin-right: 8px;
   flex-shrink: 0;
 }
- 
-/* ── RESPONSIVE (stack search under links on small screens) ── */
+
+/* ── RESPONSIVE (small screens) ── */
 @media (max-width: 720px) {
   .navbar {
     flex-wrap: wrap;
@@ -137,6 +149,24 @@ body {
     padding: 12px 20px;
     gap: 10px;
   }
+
+  /* Logo row */
+  .navbar__brand {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 4px;
+  }
+
+  .navbar__right {
+    width: 100%;
+    justify-content: center;
+    order: 2;
+  }
+
+  .navbar__search {
+    width: 100%;
+  }
+
   .navbar__links {
     gap: 18px;
     order: 3;
@@ -144,11 +174,14 @@ body {
     justify-content: center;
     flex-wrap: wrap;
   }
-  .navbar__search {
-    width: 100%;
-    order: 2;
+
+  /* Slightly smaller logo on mobile */
+  .navbar__logo {
+    width: 36px;
+    height: 36px;
   }
 }
+
  /* ── FLOATING ACTION BUTTON (FAB) ── */
       .fab {
         position: fixed;
