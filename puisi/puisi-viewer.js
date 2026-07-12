@@ -2,6 +2,7 @@
         const iframe = document.querySelector('.pdf-container iframe');
         const openBtn = document.getElementById('openTab');
         const toolbarToggle = document.getElementById('toggleToolbar');
+        const returnBtn = document.getElementById('return');
 
         if(!iframe || !openBtn || !toolbarToggle) return;
         
@@ -27,5 +28,9 @@
         toolbarToggle.addEventListener('click', function(){
             const current = iframe.src.includes('#toolbar=1');
             setToolbar(!current);
+    });
+
+        returnBtn.addEventListener('click', function () {
+        window.location.href = 'https://batch9mw.home.kg/puisi';
     });
 })();

@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/index.css" />
     <link rel="stylesheet" href="/main/css/main.css" />
     <link rel="stylesheet" href="/main/css/publicNav.css" />
+    <link rel="stylesheet" href="/puisi/puisi-viewer.css" />
     <script src="/main/js/publicNav.js" defer></script>
     <script src="/main/js/right.js" defer></script>
     <script src="/puisi/puisi-viewer.js"></script>
@@ -44,24 +45,28 @@
   </div>
 </header>
   <main>
-    <div class="head">
+    <div class="breadcrumb">
+      <a href="/puisi/index.html">Hub</a> / Semesta Memandang Kala Itu
+    </div>
+    <div class="head-info">
     <div>
-        <h1>Berlayar di Bawah Langit yang Diam</h1>
-        <p class="meta-info">[Insert Meta Info Here]</p>
+        <h1>Semesta Memandang Kala Itu</h1>
+        <p class="meta-info">[Insert Meta Data]</p>
     </div>
     <div class="action-btn">
         <a href="/XA/Puisi_XA.pdf" download class="btn primary">Download PDF</a>
-        <button id="openTab" class="btn secondary">Open in new tab</button>
-        <button id="toggleToolbar" class="btn secondary">Toggle Toolbar</button>
+        <button id="openTab" class="btn secondary">Buka di tab baru</button>
+        <button id="toggleToolbar" class="btn secondary">Alihkan Toolbar</button>
+        <button id="return" class="btn secondary">Kembali ke Beranda</button>
     </div>
     <div class="pdf-info">
-        <p><strong>Description:</strong> [Insert Description Here]</p>
-        <p><strong>File Size:</strong> 4.74 MB</p>
+        <p><strong>Deskripsi:</strong> [Insert Description Here]</p>
+        <p><strong>Ukuran File:</strong> 4.74 MB</p>
         <p><strong>Format:</strong> PDF</p>
     </div>
     <div class="pdf-view">
         <div class="pdf-container">
-        <iframe src="/XA/Puisi_XA.pdf" title="10B PDF"></iframe>
+        <iframe src="/XA/Puisi_XA.pdf" title="10A PDF"></iframe>
         </div>
     </div>
     <section class="hero">
@@ -90,23 +95,33 @@
     </section>
   </main>
   <footer>
-    <h2>Contact Us</h2>
-  <address>
-    <dl>
-      <dt>Email</dt>
-      <dd>Mail us at <a href="mailto:infosma@maitreyawira-palembang.sch.id">infosma@maitreyawira-palembang.sch.id</a>
-      </dd>
-      <dt>School Instagram</dt>
-      <dd>Official school account: <a href="https://www.instagram.com/maitreyawiraschoolpalembang?igsh=ZzkwMjVvbjQ0MHZn">@maitreyawiraschoolpalembang</a>
-      </dd>
-      <dt>High School Instagram</dt>
-      <dd>Official SMA account: <a href="https://www.instagram.com/smamaitreyawiraplg?igsh=NG92ZXVkdWhzbjNv">@smamaitreyawiraplg</a>
-      </dd>
-      <dt>High School OSIS Instagram</dt>
-      <dd>Official OSIS account: <a href="https://www.instagram.com/osis.smaitreyawiraplg?igsh=MWRtaW1nYzU3b21ncg==">@osis.smaitreyawiraplg</a>
-      </dd>
-    </dl>
-  </address>
-  </footer>
+  <div class="footer-grid">
+    <section>
+      <h2>Official Channels</h2>
+
+      <dl>
+        <dt>Email</dt>
+        <dd><a href="mailto:infosma@maitreyawira-palembang.sch.id">infosma@maitreyawira-palembang.sch.id</a></dd>
+        <dt>School Instagram</dt>
+        <dd><a href="https://www.instagram.com/maitreyawiraschoolpalembang?igsh=ZzkwMjVvbjQ0MHZn" target="_blank" rel="noopener noreferrer">@maitreyawiraschoolpalembang</a></dd>
+        <dt>High School Instagram</dt>
+        <dd><a href="https://www.instagram.com/smamaitreyawiraplg?igsh=NG92ZXVkdWhzbjNv" target="_blank" rel="noopener noreferrer">@smamaitreyawiraplg</a></dd>
+        <dt>High School OSIS Instagram</dt>
+        <dd><a href="https://www.instagram.com/osis.smaitreyawiraplg?igsh=MWRtaW1nYzU3b21ncg==" target="_blank" rel="noopener noreferrer">@osis.smaitreyawiraplg</a></dd>
+      </dl>
+    </section>
+
+    <section>
+      <h2>Project</h2>
+      <p>Website developed and maintained by <a href="https://devensmp.us.to" target="_blank" rel="noopener noreferrer">DevenSMP Studios</a>.</p>
+      <p><a href="https://github.com/Paperoni0/Batch9MW" target="_blank" rel="noopener noreferrer">Source Code (GitHub)</a></p>
+      <p>Source code licensed under <strong>GNU GPL v3</strong>.</p>
+    </section>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 MWSMA Batch 9. All rights reserved. Supported by DevenSMP Studios.</p>
+  </div>
+</footer>
   </body>
 </html>
