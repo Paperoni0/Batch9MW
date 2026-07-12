@@ -147,6 +147,11 @@ footer {
     background: #000;
 }
 
+#footer-logo {
+    width: 100px;
+    height: 100px;
+}
+
 #navVerticalLine {
   display: block !important;
 }
