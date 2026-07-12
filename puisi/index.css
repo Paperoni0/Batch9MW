@@ -2,10 +2,16 @@
     text-align: center;
     margin: 0;
     margin-top: 28px;
-    margin-bottom: 28px;
     font-size: 28px;
-    color: #fff;
     animation: fadeIn 0.8s ease;
+}
+
+.head h2 {
+    margin-top: 10px;
+    margin-bottom: 28px;
+    text-align: left;
+    font-size: 26px;
+    animation: fadeIn 1s ease;
 }
 
 @keyframes fadeUp {
