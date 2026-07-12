@@ -8,3 +8,7 @@ for (let i = 0; i < 40; i++) {
     particle.style.animationDelay = Math.random() * 5 + 's';
     particleContainer.appendChild(particle);
 }
+
+(async () => {
+    await fetch('https://countapi.mileshilliard.com/api/v1/hit/batch9mw');
+})();
