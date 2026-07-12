@@ -95,7 +95,14 @@
   h1.hero-title{
     font-family:'Cormorant Garamond', serif; font-weight:700;
     font-size: clamp(2.6rem, 9vw, 4.4rem); line-height:1.08; margin:0;
-    color: var(--ink-cream);
+    animation: titleColorShift 6s ease-in-out infinite;
+  }
+  @keyframes titleColorShift{
+    0%   { color: #ff4fa3; }
+    33%  { color: #ff8c1a; }
+    66%  { color: #3fa9ff; }
+    100% { color: #ff4fa3; }
+  }
   }
   .hero-desc{
     max-width: 30ch; margin: 1.6rem auto 0;
