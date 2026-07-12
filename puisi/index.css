@@ -7,7 +7,7 @@
 }
 
 .head h2 {
-    margin-left: 10px;
+    margin-left: 20px;
     margin-top: 10px;
     margin-bottom: 28px;
     text-align: left;
@@ -89,9 +89,9 @@
 
 .list-poem {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 18px;
-    margin: 10px;
+    margin: 20px;
     margin-top: 20px;
 }
 
