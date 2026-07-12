@@ -4,7 +4,7 @@
         const toolbarToggle = document.getElementById('toggleToolbar');
         const returnBtn = document.getElementById('return');
 
-        if(!iframe || !openBtn || !toolbarToggle) return;
+        if(!iframe || !openBtn || !toolbarToggle || !returnBtn) return;
         
         // Open in new tab function
         openBtn.addEventListener('click', function(){
